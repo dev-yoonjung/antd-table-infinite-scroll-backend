@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3307/dummy_user_schema
-    username: dummy_user
-    password: ENC(5Q40LKmMeKxDBx1gIW3tH5HYFLinlfSt)
+    url: jdbc:mysql://127.0.0.1:3307/antd_infinite_table
+    username: ENC(BdZY1a6U3wuoFbH4sVZE7Hu8v97NnrI6RlQTSO/4N5w=)
+    password: ENC(BdZY1a6U3wuoFbH4sVZE7Hu8v97NnrI6RlQTSO/4N5w=)
   jpa:
     hibernate:
       ddl-auto: update

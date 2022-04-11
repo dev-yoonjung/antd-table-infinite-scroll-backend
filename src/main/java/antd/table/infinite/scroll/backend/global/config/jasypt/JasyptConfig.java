@@ -1,4 +1,4 @@
-package antd.table.infinite.scroll.backend.config;
+package antd.table.infinite.scroll.backend.global.config.jasypt;
 
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
