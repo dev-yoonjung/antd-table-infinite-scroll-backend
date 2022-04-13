@@ -5,3 +5,11 @@ spring:
 jasypt:
   encryptor:
     bean: jasyptStringEncryptor
+
+management:
+  endpoints:
+    web:
+      base-path: /application
+  endpoint:
+    health:
+      show-details: always
