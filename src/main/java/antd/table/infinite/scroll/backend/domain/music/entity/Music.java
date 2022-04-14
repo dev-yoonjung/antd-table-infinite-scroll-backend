@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @EqualsAndHashCode(of = {"id"}, callSuper = false)
 @ToString
 public class Music extends BaseEntity {
@@ -27,27 +28,5 @@ public class Music extends BaseEntity {
 
     @Column(columnDefinition = "integer default 0")
     private Integer likeCount;
-
-    @Builder
-    public Music(
-            String title,
-            String artist,
-            String album,
-            Integer likeCount
-    ) {
-        this.title = title;
-        this.artist = artist;
-        this.album = album;
-        this.likeCount = likeCount;
-    }
-
-    public static Music of(Music music) {
-        return Music.builder()
-                .title(music.getTitle())
-                .artist(music.getArtist())
-                .album(music.getAlbum())
-                .likeCount(music.getLikeCount())
-                .build();
-    }
 
 }
