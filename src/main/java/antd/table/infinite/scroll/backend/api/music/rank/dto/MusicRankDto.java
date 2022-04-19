@@ -12,6 +12,8 @@ public class MusicRankDto {
 
     private Long id;
 
+    private Integer rank;
+
     private String title;
 
     private String artist;
@@ -20,9 +22,10 @@ public class MusicRankDto {
 
     private Integer likeCount;
 
-    public static MusicRankDto of(Music music) {
+    public static MusicRankDto of(Music music, Integer rank) {
         return MusicRankDto.builder()
                 .id(music.getId())
+                .rank(rank)
                 .title(music.getTitle())
                 .artist(music.getArtist())
                 .album(music.getAlbum())
