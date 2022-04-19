@@ -22,9 +22,9 @@ public class RankController {
     private final RankService rankService;
 
     @GetMapping
-    public ResponseEntity<List<MusicRankDto>> getRank(@RequestParam Long lastIndex, Pageable pageable) {
-        log.info("Last index: {}, Number to show per page: {}", lastIndex, pageable.getPageSize());
-        List<MusicRankDto> body = rankService.getRank(lastIndex, pageable);
+    public ResponseEntity<List<MusicRankDto>> getRank(@RequestParam Long lastIndex, @RequestParam Integer size) {
+        log.info("Last index: {}, Number to show per page: {}", lastIndex, size);
+        List<MusicRankDto> body = rankService.getRank(lastIndex, size);
         return ResponseEntity.ok(body);
     }
 

@@ -19,12 +19,16 @@ public class RankService {
 
     private final MusicService musicService;
 
-    public List<MusicRankDto> getRank(Long lastIndex, Pageable pageable) {
-        List<Music> musicList = musicService.findByOOrderByIdDesc(lastIndex, pageable);
+    public List<MusicRankDto> getRank(Long lastIndex, Integer size) {
+
+        List<Music> musicList = musicService.findByOOrderByIdDesc(lastIndex, Pageable.ofSize(size));
         AtomicInteger index = new AtomicInteger();
 
         return musicList.stream()
-                .map(music -> MusicRankDto.of(music, index.getAndIncrement()))
+                .map(music -> {
+                    Integer rank =  lastIndex.intValue() + index.incrementAndGet();
+                    return MusicRankDto.of(music, rank);
+                })
                 .collect(Collectors.toList());
     }
 
